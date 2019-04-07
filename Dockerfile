@@ -10,8 +10,7 @@ RUN mkdir /src
 WORKDIR /src
 ADD ./slecting_courses /src
 RUN virtualenv newenv
-RUN newenv/bin/activate
-RUN apt-get update
+RUN newenv/bin/apt-get update
 RUN cat /config/requirements.txt | xargs apt-get -y install
 RUN ./manage.py makemigrations
 RUN ./manage.py migrate
