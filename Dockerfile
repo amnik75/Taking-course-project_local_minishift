@@ -1,6 +1,7 @@
 FROM python:3.6
 ENV PYTHONUNBUFFERED 1
 
+RUN pip3 install virtualenv
 
 ADD requirements.txt /config/
 RUN apt-get update
