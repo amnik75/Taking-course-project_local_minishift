@@ -10,8 +10,7 @@ RUN mkdir /src
 WORKDIR /src
 ADD ./slecting_courses /src
 RUN virtualenv newenv
-WORKDIR newenv/bin
-RUN pip3 install -r /config/requirements.txt
-RUN ./manage.py makemigrations
+RUN newenv/bin/pip3 install -r /config/requirements.txt
+CMD ["newenv/bin/python3", "manage.py makemigrations"]
 RUN ./manage.py migrate
 RUN ./manage.py runserver
