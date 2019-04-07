@@ -4,14 +4,15 @@ ENV PYTHONUNBUFFERED 1
 RUN pip3 install virtualenv
 
 ADD requirements.txt /config/
-RUN apt-get update
-RUN cat /config/requirements.txt | xargs apt-get -y install
 
 
 RUN mkdir /src
 WORKDIR /src
 ADD ./slecting_courses /src
 virtualenv newenv
+source newenv/bin/activate
+RUN apt-get update
+RUN cat /config/requirements.txt | xargs apt-get -y install
 RUN ./manage.py makemigrations
 RUN ./manage.py migrate
 RUN ./manage.py runserver
