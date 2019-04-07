@@ -9,8 +9,8 @@ ADD requirements.txt /config/
 RUN mkdir /src
 WORKDIR /src
 ADD ./slecting_courses /src
-virtualenv newenv
-source newenv/bin/activate
+RUN virtualenv newenv
+RUN source newenv/bin/activate
 RUN apt-get update
 RUN cat /config/requirements.txt | xargs apt-get -y install
 RUN ./manage.py makemigrations
