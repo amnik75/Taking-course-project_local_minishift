@@ -11,6 +11,7 @@ RUN cat /config/requirements.txt | xargs apt-get -y install
 RUN mkdir /src
 WORKDIR /src
 ADD ./slecting_courses /src
+virtualenv newenv
 RUN ./manage.py makemigrations
 RUN ./manage.py migrate
 RUN ./manage.py runserver
