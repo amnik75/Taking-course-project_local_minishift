@@ -12,5 +12,6 @@ ADD ./slecting_courses /src
 RUN virtualenv newenv
 RUN newenv/bin/pip3 install -r /config/requirements.txt
 CMD ["newenv/bin/python3", "manage.py makemigrations"]
-RUN ./manage.py migrate
-RUN ./manage.py runserver
+CMD ["newenv/bin/python3", "manage.py migrate"]
+CMD ["newenv/bin/python3", "manage.py runserver"]
+
