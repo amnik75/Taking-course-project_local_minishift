@@ -13,5 +13,6 @@ RUN virtualenv newenv
 RUN newenv/bin/pip3 install -r /config/requirements.txt
 CMD ["newenv/bin/python3", "manage.py makemigrations"]
 CMD ["newenv/bin/python3", "manage.py migrate"]
-CMD ["newenv/bin/python3", "manage.py runserver"]
+CMD ["newenv/bin/python3", "manage.py runserver 0.0.0.0:3013"]
+EXPOSE 3013
 
