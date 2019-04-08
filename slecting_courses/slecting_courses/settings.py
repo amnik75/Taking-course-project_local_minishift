@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'slecting_courses.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'avadb',
-        'USER': 'amnik',
-        'PASSWORD': '1375',
-        'HOST': '172.17.0.4',
-        'PORT': '5432',
+        'NAME': 'todoapp',
+        'USER': 'todoapp',
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'HOST': os.getenv("DB_HOST"),
+        'PORT': "",
     }
 }
 
