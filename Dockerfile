@@ -15,6 +15,3 @@ CMD ["newenv/bin/python3", "manage.py makemigrations"]
 CMD ["newenv/bin/python3", "manage.py migrate"]
 CMD ["newenv/bin/python3", "manage.py runserver 0.0.0.0:3013"]
 
-CMD gunicorn slecting_courses.wsgi -b 0.0.0.0:3013
-EXPOSE 3013
-
