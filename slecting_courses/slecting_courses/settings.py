@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'avadb',
         'USER': 'amnik',
         'PASSWORD': '1375',
-        'HOST': '172.30.135.91',
+        'HOST': '172.30.182.222',
         'PORT': "5432",
     }
 }
